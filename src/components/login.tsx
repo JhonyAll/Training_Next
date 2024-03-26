@@ -1,11 +1,9 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { PiEye, PiEyeSlash } from "react-icons/pi";
 
 const Login = () => {
-  const [darkTheme, setDarkTheme] = useState(false);
-
   const [inputName, setInputName] = useState("");
   const [inputPassword, setInputPassword] = useState("");
 
@@ -25,31 +23,8 @@ const Login = () => {
     }
   };
 
-  useEffect(() => {
-    if (
-      window.matchMedia &&
-      window.matchMedia("(prefers-color-scheme: dark)").matches
-    ) {
-      setDarkTheme(true);
-      console.log(window.matchMedia("(prefers-color-scheme: dark)"));
-    }
-  }, []);
-
-  // useEffect(() => {
-  //   if (
-  //     window.matchMedia &&
-  //     window.matchMedia("(prefers-color-scheme: dark)").matches
-  //   ) {
-  //     setDarkTheme(true);
-  //   }
-  // }, window.matchMedia)
-
   return (
-    <form
-      className={`text-gray-50 flex flex-col justify-center align-center w-1/3 px-20 py-36 ${
-        darkTheme ? "bg-gray-800" : "bg-gray-200"
-      } gap-20 rounded-lg shadow-[0rem_0rem_.5rem_0rem_rgba(122,53,122,1)] border border-purple-300 border-solid`}
-    >
+    <form className="dark:text-gray-50 text-gray-800 flex flex-col justify-center align-center w-1/3 px-20 py-36 dark:bg-gray-800 bg-gray-200 gap-20 rounded-lg shadow-[0rem_0rem_.5rem_0rem_rgba(122,53,122,1)]">
       <h1 className="text-3xl font-semibold ">Sign In</h1>
       <div className="flex flex-col gap-6 text-zinc-700">
         <div className="relative w-full h-14">
@@ -110,14 +85,14 @@ const Login = () => {
               />
             )}
           </span>
-          <span className="text-xs text-gray-50 hover:text-purple-300 cursor-pointer select-none">
+          <span className=" dark:text-gray-50 text-gray-800 text-xs text-gray-50 hover:text-purple-300 cursor-pointer select-none">
             I forgot my password
           </span>
         </div>
       </div>
       <button
         type="submit"
-        className="w-full h-14 bg-purple-400 hover:bg-purple-500 rounded font-semibold select-none"
+        className="w-full h-14 bg-purple-500 hover:bg-purple-600 rounded font-semibold select-none"
       >
         Login
       </button>

@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import styles from "@/components/theme.module.css";
 
 export const metadata: Metadata = {
   title: "Library",
@@ -14,7 +13,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-BR">
-      <body className={`w-screen ${styles.body_theme}`}>{children}</body>
+      <body className="w-screen dark:bg-zinc-700 bg-gray-300">{children}</body>
     </html>
   );
 }
