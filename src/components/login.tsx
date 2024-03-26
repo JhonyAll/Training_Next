@@ -24,13 +24,13 @@ const Login = () => {
   };
 
   return (
-    <form className="dark:text-gray-50 text-gray-800 flex flex-col justify-center align-center w-1/3 px-20 py-36 dark:bg-gray-800 bg-gray-200 gap-20 rounded-lg shadow-[0rem_0rem_.5rem_0rem_rgba(122,53,122,1)]">
-      <h1 className="text-3xl font-semibold ">Sign In</h1>
-      <div className="flex flex-col gap-6 text-zinc-700">
-        <div className="relative w-full h-14">
+    <form className="bg-gray-50 text-gray-800 w-1/3 px-20 py-36 rounded shadow-lg flex flex-col justify-center align-center gap-20 dark:bg-gray-900 dark:text-gray-50 dark:shadow-xl">
+      <h1 className="text-4xl font-semibold text-center">Sign In</h1>
+      <div className="text-zinc-700 flex flex-col gap-6">
+        <div className="w-full h-14 relative">
           <label htmlFor="name" className="w-full h-full">
             <input
-              className="w-full h-full peer pl-2 pt-2 bg-gray-100 focus:outline-none hover:bg-gray-200 focus:bg-gray-50 border-solid border border-slate-700 focus:border-purple-300 focus:shadow-[0rem_0rem_.25rem_0rem_rgba(122,53,122,1)] text-base font-sans rounded"
+              className="bg-gray-50 text-base font-sans w-full h-full pl-2 pt-2 rounded border-solid border border-slate-700 hover:bg-gray-100 focus:outline-none focus:border-purple-300 focus:shadow-as focus:shadow-purple-700 dark:border-purple-200 dark:focus:shadow-purple-200"
               type="text"
               name="name"
               id="name"
@@ -42,27 +42,27 @@ const Login = () => {
             <span
               className={`absolute left-0 translate-y-[-50%] transition-all ease-in-out ${
                 isNameFocus
-                  ? "top-0 mt-4 ml-2 text-sm font-semibold"
-                  : "top-2/4 ml-2 text-base"
+                  ? "text-sm mt-4 ml-2 top-0"
+                  : "text-base ml-2 top-2/4"
               } `}
             >
               Name
             </span>
           </label>
         </div>
-        <div className="relative w-full h-14">
+        <div className="w-full h-14 relative">
           <label htmlFor="password" className="w-full h-full">
             <span
               className={`absolute left-0 translate-y-[-50%] transition-all ease-in-out ${
                 isPasswordFocus
-                  ? "top-0 mt-4 ml-2 text-sm font-semibold"
-                  : "top-2/4 ml-2 text-base"
+                  ? "text-sm mt-4 ml-2 top-0"
+                  : "text-base ml-2 top-2/4"
               } `}
             >
               Password
             </span>
             <input
-              className="text-base peer w-full h-full pl-2 pt-2 bg-gray-100 focus:outline-none hover:bg-gray-200 focus:bg-gray-50 border-solid border border-slate-700 focus:border-purple-300 focus:shadow-[0rem_0rem_.25rem_0rem_rgba(122,53,122,1)] text-sm font-sans rounded"
+              className="bg-gray-50 text-base font-sans w-full h-full pl-2 pt-2 rounded border-solid border border-slate-700 hover:bg-gray-100 focus:outline-none focus:border-purple-300 focus:shadow-as focus:shadow-purple-700 dark:border-purple-200 dark:focus:shadow-purple-200"
               type={`${reveledPassword ? "text" : "password"}`}
               name="password"
               id="password"
@@ -72,7 +72,7 @@ const Login = () => {
               onBlur={handleBlurPassword}
             />
           </label>
-          <span className="absolute right-0 translate-y-[-50%] top-2/4 mr-2">
+          <span className="mr-2 absolute right-0 translate-y-[-50%] top-2/4">
             {reveledPassword ? (
               <PiEyeSlash
                 className="text-lg cursor-pointer"
@@ -85,14 +85,14 @@ const Login = () => {
               />
             )}
           </span>
-          <span className=" dark:text-gray-50 text-gray-800 text-xs text-gray-50 hover:text-purple-300 cursor-pointer select-none">
+          <span className="text-gray-800 text-xs text-gray-50 cursor-pointer select-none hover:text-purple-500 dark:text-gray-50 dark:hover:text-purple-300">
             I forgot my password
           </span>
         </div>
       </div>
       <button
         type="submit"
-        className="w-full h-14 bg-purple-500 hover:bg-purple-600 rounded font-semibold select-none"
+        className="bg-purple-400 font-semibold select-none w-full h-14 rounded hover:bg-purple-500 dark:bg-purple-500 dark:hover:bg-purple-600"
       >
         Login
       </button>
